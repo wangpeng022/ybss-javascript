@@ -1,0 +1,26 @@
+{
+  "dataType": "select",
+  "require": true,
+  "options": [
+    {
+      "val": "1",
+      "label": "男"
+    },
+    {
+      "val": "2",
+      "label": "女"
+    }
+  ],
+  "key": "sex",
+  "keyProp": {
+    "show": true,
+    "position": "",
+    "before": "",
+    "after": ""
+  },
+  "keyAttr": {},
+  "keyStyle": {},
+  "label": "性别",
+  "labelProp": {},
+  "labelStyle": {}
+}

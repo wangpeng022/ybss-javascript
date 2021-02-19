@@ -4,19 +4,19 @@
  * @Author: 王鹏
  * @Date: 2021-02-02 14:49:24
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-02-03 10:40:13
+ * @LastEditTime: 2021-02-18 10:44:51
  */
 Object.assign(JForm,{
   //加载事件
   onLoad:function(form){
-    // console.log(form.$parent,11111111);
+    console.log(form.$parent.formDef,111);
     
     let realEnterPriseFields = form.$parent.formDef.fields
     
     // realEnterPriseFields[2].field_options.columns[0].fields[0].field_options.disabled = true
 
     // form.$set(form.$parent.formDef.fields[2].field_options.columns[0].fields[0].field_options,'disabled',true)
-    form.$set(form.$parent.formDef.fields[4].field_options.columns[0].fields[0].field_options,'readonly',true)
+    // form.$set(form.$parent.formDef.fields[4].field_options.columns[0].fields[0].field_options,'readonly',true)
 
     function toggle (selector, type) {
       let dom = document.querySelector(selector)

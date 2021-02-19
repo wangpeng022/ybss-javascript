@@ -1,0 +1,16 @@
+        {
+          "dataType": "image",
+          "require": false,
+          "key": "attachment_id",
+          "keyProp": {
+            "show": true,
+            "position": "",
+            "before": "",
+            "after": ""
+          },
+          "keyAttr": {},
+          "keyStyle": {},
+          "label": "照片",
+          "labelProp": {},
+          "labelStyle": {}
+        }

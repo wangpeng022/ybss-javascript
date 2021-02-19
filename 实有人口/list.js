@@ -1,17 +1,17 @@
 /*
- * @Descripttion: 实有单位模板脚本
+ * @Descripttion: 实有人口模板脚本
  * @version: 
  * @Author: 王鹏
- * @Date: 2021-02-02 19:16:26
+ * @Date: 2021-01-19 11:02:06
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-02-18 14:13:10
+ * @LastEditTime: 2021-02-08 15:27:21
  */
 Object.assign(JTemplate, {
   //加载事件
   onLoad: function (template) {
     // code值
     let codes = {
-      // 房屋位置
+      // 标准地址
       address: 'Q^region_tree^SL',
       // 网格
       grid: 'Q^grid_code^S',
@@ -28,9 +28,9 @@ Object.assign(JTemplate, {
           url: '/ybss/v3/standard/grid/queryGridByAreaCode',
           method: 'get',
           params: {
-            // "parameters": [{ "key": "Q^area_code^S", "value": code }],
-            // "sorts": [{ "field": "sorts", "order": "asc" }]
-            areaCode: code
+            //"parameters": [{ "key": "Q^area_code^S", "value": code }],
+            //"sorts": [{ "field": "sorts", "order": "asc" }]
+            "areaCode":code
           }
         }).then(res => {
           if (res.state === 200) {
@@ -39,15 +39,38 @@ Object.assign(JTemplate, {
             target.options = res.data.dataResult
           }
         })
-      }
+      },
+      /**
+     * @description: 校验是否有网格
+     * @return void
+     */
+      checkisHasGrid: () => {
+        this.$request({
+          url: '/ybss/v3/esintConfig/queryByType?type=hasGrid',
+        }).then(res => {
+          if (res.state === 200) {
+            let list = res.data.dataResult
+            if (list && list.length > 0) {
+              let hasGrid = list[0].code
+              start(hasGrid)
+            }
+          }
+        })
+      },
     }
+
+    $fn.checkisHasGrid()
+
+    function start(hasGrid) {
+      // console.log(hasGrid,'hasGrid');
+      
       // 搜索栏中的数据模型
       let forms = template.listConfig.searchForm.forms
       forms.forEach((item, index) => {
         if (item.modelValue) {
           let code = item.modelValue
-          if (code === codes.grid) { // 所属网格 跟随标准地址 联动
-            setTimeout(()=>{
+          if (hasGrid) {
+            if (code === codes.grid) { // 所属网格 跟随标准地址 联动
               template.$watch(() => { return template.$refs.searchForm.params[codes.address] }, () => {
                 let ids = template.$refs.searchForm.params[codes.address]
                 if (ids) {
@@ -56,13 +79,22 @@ Object.assign(JTemplate, {
                 } else {
                   item.options = []
                   template.$refs.searchForm.params[codes.grid] = ''
+                  template.$refs.searchForm.params[codes.complex] = ''
                 }
                 item.valueKey = 'id'
                 item.labelKey = 'gridName'
               }, { immediate: true })
-            },1000)
-          }
+            } 
+          } 
         }
       });
-  }
+    }
+  },
+  //按钮提交前置事件
+  beforeSubmit: function (template, action, position, selection, data, callback) {
+    if (action === 'custom') {
+      template.realPersonDialogAddShow = true
+    }
+    callback(true)
+  },
 });

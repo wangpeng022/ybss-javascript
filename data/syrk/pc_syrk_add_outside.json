@@ -1,0 +1,599 @@
+{
+  "layout": [
+    {
+      "layoutType": "row",
+      "dataType": "",
+      "require": "",
+      "options": [],
+      "link": "",
+      "attr": {},
+      "key": "row1",
+      "keyProp": {
+        "show": true,
+        "position": "",
+        "before": "",
+        "after": ""
+      },
+      "keyAttr": {},
+      "keyStyle": {},
+      "label": "",
+      "labelProp": {},
+      "labelStyle": {},
+      "cols": [
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col1",
+          "children": [
+            {
+              "dataType": "text",
+              "require": true,
+              "key": "fg_familyname",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "外文姓",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col2",
+          "children": [
+            {
+              "dataType": "text",
+              "require": true,
+              "key": "fg_firstname",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "外文名",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col3",
+          "children": [
+            {
+              "dataType": "text",
+              "require": true,
+              "key": "telphone",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "联系电话",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col4",
+          "children": [
+            {
+              "dataType": "select",
+              "require": true,
+              "datadict": "ybss_xb",
+              "key": "sex",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "性别",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layoutType": "row",
+      "dataType": "",
+      "require": "",
+      "options": [],
+      "link": "",
+      "attr": {},
+      "key": "row2",
+      "keyProp": {
+        "show": true,
+        "position": "",
+        "before": "",
+        "after": ""
+      },
+      "keyAttr": {},
+      "keyStyle": {},
+      "label": "",
+      "labelProp": {},
+      "labelStyle": {},
+      "cols": [
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col21",
+          "children": [
+            {
+              "dataType": "select",
+              "require": false,
+              "datadict": "zjzl",
+              "key": "fg_visa_code",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "签证种类",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col22",
+          "children": [
+            {
+              "dataType": "datePicker",
+              "require": true,
+              "key": "idcard_validity",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "有效期",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col23",
+          "children": [
+            {
+              "dataType": "datePicker",
+              "require": true,
+              "key": "birthday",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "出生日期",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col23",
+          "children": [
+            {
+              "dataType": "select",
+              "require": false,
+              "datadict": "maritalStatus",
+              "key": "marital_code",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "婚姻状况",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layoutType": "row",
+      "dataType": "",
+      "require": "",
+      "options": [],
+      "link": "",
+      "attr": {},
+      "key": "row3",
+      "keyProp": {
+        "show": true,
+        "position": "",
+        "before": "",
+        "after": ""
+      },
+      "keyAttr": {},
+      "keyStyle": {},
+      "label": "",
+      "labelProp": {},
+      "labelStyle": {},
+      "cols": [
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col31",
+          "children": [
+            {
+              "dataType": "select",
+              "require": false,
+              "datadict": "lhmd",
+              "key": "fg_traget_code",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "来华目的",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col32",
+          "children": [
+            {
+              "dataType": "datePicker",
+              "require": true,
+              "key": "fg_arrivals_date",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "抵华日期",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col33",
+          "children": [
+            {
+              "dataType": "datePicker",
+              "require": true,
+              "key": "fg_leave_date",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "预计离开",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col34",
+          "children": [
+            {
+              "dataType": "select",
+              "require": false,
+              "datadict": "zszl",
+              "key": "fg_residence_type_code",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "住所种类",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layoutType": "row",
+      "dataType": "",
+      "require": "",
+      "options": [],
+      "link": "",
+      "attr": {},
+      "key": "row4",
+      "keyProp": {
+        "show": true,
+        "position": "",
+        "before": "",
+        "after": ""
+      },
+      "keyAttr": {},
+      "keyStyle": {},
+      "label": "",
+      "labelProp": {},
+      "labelStyle": {},
+      "cols": [
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 12
+          },
+          "key": "col41",
+          "children": [
+            {
+              "dataType": "text",
+              "require": false,
+              "key": "domicile",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "国籍地址",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col42",
+          "children": [
+            {
+              "dataType": "select",
+              "require": false,
+              "datadict": "education",
+              "key": "education_code",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "学历",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col43",
+          "children": [
+            {
+              "dataType": "text",
+              "require": false,
+              "key": "graduated_school",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "毕业院校",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layoutType": "row",
+      "dataType": "",
+      "require": "",
+      "options": [],
+      "link": "",
+      "attr": {},
+      "key": "row5",
+      "keyProp": {
+        "show": true,
+        "position": "",
+        "before": "",
+        "after": ""
+      },
+      "keyAttr": {},
+      "keyStyle": {},
+      "label": "",
+      "labelProp": {},
+      "labelStyle": {},
+      "cols": [
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col41",
+          "children": [
+            {
+              "dataType": "select",
+              "require": false,
+              "datadict": "zjxy",
+              "key": "religion_code",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "宗教信仰",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col42",
+          "children": [
+            {
+              "dataType": "select",
+              "require": false,
+              "datadict": "jyzt",
+              "key": "employment_status",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "就业状态",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col33",
+          "children": [
+            {
+              "dataType": "text",
+              "require": false,
+              "key": "employer",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "工作单位",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col34",
+          "children": [
+            {
+              "dataType": "text",
+              "require": false,
+              "key": "position",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "职务",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "table_id": "",
+  "rule": {}
+}

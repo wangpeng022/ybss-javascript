@@ -1,0 +1,16 @@
+{
+  "dataType": "datePicker",
+  "require": true,
+  "key": "idcard_validity",
+  "keyProp": {
+    "show": true,
+    "position": "",
+    "before": "",
+    "after": ""
+  },
+  "keyAttr": {},
+  "keyStyle": {},
+  "label": "有效期",
+  "labelProp": {},
+  "labelStyle": {}
+}

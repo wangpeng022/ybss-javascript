@@ -1,0 +1,53 @@
+{
+  "layout": [
+    {
+      "layoutType": "row",
+      "dataType": "",
+      "require": "",
+      "options": [],
+      "link": "",
+      "attr": {},
+      "key": "row1",
+      "keyProp": {
+        "show": true,
+        "position": "",
+        "before": "",
+        "after": ""
+      },
+      "keyAttr": {},
+      "keyStyle": {},
+      "label": "",
+      "labelProp": {},
+      "labelStyle": {},
+      "cols": [
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 24
+          },
+          "key": "col1",
+          "children": [
+            {
+              "dataType": "textarea",
+              "require": true,
+              "key": "not_placement_reason",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "未安置原因",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "table_id": "",
+  "rule": {}
+}

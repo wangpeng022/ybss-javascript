@@ -1,0 +1,172 @@
+{
+  "layout": [
+    {
+      "layoutType": "row",
+      "dataType": "",
+      "require": "",
+      "options": [],
+      "link": "",
+      "attr": {},
+      "key": "row1",
+      "keyProp": {
+        "show": true,
+        "position": "",
+        "before": "",
+        "after": ""
+      },
+      "keyAttr": {},
+      "keyStyle": {},
+      "label": "",
+      "labelProp": {},
+      "labelStyle": {},
+      "cols": [
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col11",
+          "children": [
+            {
+              "dataType": "select",
+              "require": true,
+              "options": [
+                {
+                  "val": "1",
+                  "label": "男"
+                },
+                {
+                  "val": "2",
+                  "label": "女"
+                }
+              ],
+              "key": "personnel_status",
+              "datadict": "rysf",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "人员身份",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col12",
+          "children": [
+            {
+              "dataType": "select",
+              "require": true,
+              "options": [
+                {
+                  "val": "1",
+                  "label": "男"
+                },
+                {
+                  "val": "2",
+                  "label": "女"
+                }
+              ],
+              "key": "household_head_relationship",
+              "datadict": "yhzgx",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "与户主关系",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col13",
+          "children": [
+            {
+              "dataType": "select",
+              "require": true,
+              "options": [
+                {
+                  "val": "1",
+                  "label": "男"
+                },
+                {
+                  "val": "2",
+                  "label": "女"
+                }
+              ],
+              "key": "household_registration",
+              "datadict": "hjqk",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "户籍情况",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        },
+        {
+          "layoutType": "col",
+          "attr": {
+            "span": 6
+          },
+          "key": "col14",
+          "children": [
+            {
+              "dataType": "select",
+              "require": true,
+              "options": [
+                {
+                  "val": "1",
+                  "label": "男"
+                },
+                {
+                  "val": "2",
+                  "label": "女"
+                }
+              ],
+              "key": "identity",
+              "datadict": "ybss_rylx",
+              "keyProp": {
+                "show": true,
+                "position": "",
+                "before": "",
+                "after": ""
+              },
+              "keyAttr": {},
+              "keyStyle": {},
+              "label": "人员类型",
+              "labelProp": {},
+              "labelStyle": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "table_id": "",
+  "rule": {}
+}

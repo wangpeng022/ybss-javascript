@@ -1,0 +1,16 @@
+{
+  "dataType": "text",
+  "require": true,
+  "key": "name",
+  "keyProp": {
+    "show": true,
+    "position": "",
+    "before": "",
+    "after": ""
+  },
+  "keyAttr": {},
+  "keyStyle": {},
+  "label": "姓名",
+  "labelProp": {},
+  "labelStyle": {}
+}

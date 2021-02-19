@@ -1,0 +1,63 @@
+
+  {
+    "layoutType": "row",
+    "dataType": "",
+    "require": "",
+    "options": [],
+    "link": "",
+    "attr": {},
+    "key": "row1",
+    "keyProp": {
+      "show": true,
+      "position": "",
+      "before": "",
+      "after": ""
+    },
+    "keyAttr": {},
+    "keyStyle": {},
+    "label": "",
+    "labelProp": {},
+    "labelStyle": {},
+    "cols": [
+      {
+        "layoutType": "col",
+        "attr": {
+          "span": 6
+        },
+        "key": "col1",
+        "children": [
+
+        ]
+      },
+      {
+        "layoutType": "col",
+        "attr": {
+          "span": 6
+        },
+        "key": "col2",
+        "children": [
+
+        ]
+      },
+      {
+        "layoutType": "col",
+        "attr": {
+          "span": 6
+        },
+        "key": "col3",
+        "children": [
+
+        ]
+      },
+      {
+        "layoutType": "col",
+        "attr": {
+          "span": 6
+        },
+        "key": "col4",
+        "children": [
+
+        ]
+      }
+    ]
+  }
