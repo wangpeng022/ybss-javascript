@@ -4,7 +4,7 @@
  * @Author: 王鹏
  * @Date: 2021-02-02 19:16:26
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-02-18 14:13:10
+ * @LastEditTime: 2021-02-19 19:27:39
  */
 Object.assign(JTemplate, {
   //加载事件

@@ -4,7 +4,7 @@
  * @Author: 王鹏
  * @Date: 2021-01-19 11:02:06
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-02-08 15:27:21
+ * @LastEditTime: 2021-02-22 10:48:58
  */
 Object.assign(JTemplate, {
   //加载事件
@@ -92,9 +92,13 @@ Object.assign(JTemplate, {
   },
   //按钮提交前置事件
   beforeSubmit: function (template, action, position, selection, data, callback) {
-    if (action === 'custom') {
+    if (action === 'add') {
       template.realPersonDialogAddShow = true
+    }else if(action === 'edit') {
+      template.realPersonDialogEditShow = true
+      template.$refs.realPersonDialogEdit.id = data.card_no
+    }else{
+      callback(true)
     }
-    callback(true)
   },
 });
