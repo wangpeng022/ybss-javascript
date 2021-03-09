@@ -4,7 +4,7 @@
  * @Author: 王鹏
  * @Date: 2021-01-21 10:31:09
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-01-27 17:02:10
+ * @LastEditTime: 2021-03-06 15:42:14
  */
 Object.assign(JTemplate,{
   //加载事件
@@ -148,8 +148,6 @@ Object.assign(JTemplate,{
   
  //按钮提交前置事件
   beforeSubmit:function(template, action, position, selection, data, callback){
-    console.log(action,'action');
-    
     if (action == 'customAdd') { // 自定义添加
       template.customDialogShow = true
       template.$refs.customAddressDialog.type = 'add'
@@ -161,14 +159,18 @@ Object.assign(JTemplate,{
       template.editDialogShow = true
       template.$refs.editAddressDialog.type = 'edit'
       template.$refs.editAddressDialog.buildingId = data.id_
-    }else if (action == 'cancel') { // 自定义添加
+    }else if (action == 'cancel') { // 自定义注销
       template.cancelDialogShow = true
-      template.$refs.cancelAddressDialog.id = data.id_
+      template.$refs.cancelAddressDialog.pData = data
     }
     else if(action == 'mapView'){ // 地图模式
-
+      if (position === 'manage') { // 列表中某一项
+        template.$router.push('/rfgl/bzdz_1/dtms66?id=' + data.id_)
+      }else if (position === 'toolbar'){
+        template.$router.push('/rfgl/bzdz_1/dtms66')
+      }
     }else if(action == 'allView'){ // 立面图图
-      template.$router.push('/ybsswptest/lmtPage?id=' + data.id_)
+      template.$router.push('/rfgl/bzdz_1/lmtPage?id=' + data.id_)
     }else{
       callback(true) 
     }

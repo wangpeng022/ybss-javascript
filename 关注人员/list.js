@@ -1,10 +1,10 @@
 /*
- * @Descripttion: 实有人口模板脚本
+ * @Descripttion: 关注人员模板脚本
  * @version: 
  * @Author: 王鹏
  * @Date: 2021-01-19 11:02:06
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-03-09 10:16:25
+ * @LastEditTime: 2021-03-02 09:36:25
  */
 Object.assign(JTemplate, {
   //加载事件
@@ -30,7 +30,7 @@ Object.assign(JTemplate, {
           params: {
             //"parameters": [{ "key": "Q^area_code^S", "value": code }],
             //"sorts": [{ "field": "sorts", "order": "asc" }]
-            "areaCode": code
+            "areaCode":code
           }
         }).then(res => {
           if (res.state === 200) {
@@ -63,7 +63,7 @@ Object.assign(JTemplate, {
 
     function start(hasGrid) {
       // console.log(hasGrid,'hasGrid');
-
+      
       // 搜索栏中的数据模型
       let forms = template.listConfig.searchForm.forms
       forms.forEach((item, index) => {
@@ -84,89 +84,23 @@ Object.assign(JTemplate, {
                 item.valueKey = 'id'
                 item.labelKey = 'gridName'
               }, { immediate: true })
-            }
-          }
+            } 
+          } 
         }
       });
     }
   },
   //按钮提交前置事件
   beforeSubmit: function (template, action, position, selection, data, callback) {
-    if (action === 'add') {
-      template.realPersonDialogAddShow = true
-    } else if (action === 'edit') {
-      template.realPersonDialogEditShow = true
-      template.$refs.realPersonDialogEdit.id = data.card_no
-    } else if (action === 'detail') {
-      template.keyPersonnelDialogDetailShow = true
+    console.log(data,'data');
+    
+    if (action === 'detail') {
       // type: 1  关注人员  ； 2 实有人口
-      template.$refs.keyPersonnelDialogDetail.type = '2'
+      template.$refs.keyPersonnelDialogDetail.type = '1'
       template.$refs.keyPersonnelDialogDetail.rowData = data
       template.keyPersonnelDialogDetailShow = true
-    } else if (action === 'import') {
-      this.$dialog({
-        data() {
-          return {
-            nation: '1',
-            show: false,
-            action: __YBSS_CONFIG__.IMPORT_BASE_URL,
-            accept: ".xls,.xlsx"
-          }
-        },
-        methods: {
-          beforeUpload(file) {
-            const isLt2M = file.size / 1024 / 1024 < 2;
-            if (!isLt2M) {
-              this.$message.error('上传文件大小不能超过 2MB!');
-            }
-            return isLt2M
-          },
-          handleSuccess(res, file) {
-            if (res.state === 200 ) {
-              this.$alert(res.message || '上传成功',{
-                type: 'success',
-                callback: ()=>{
-                  template.dialogTemplate = null
-                }
-              })
-            }
-          },
-        },
-        template: `
-        <div>
-          <el-row style="margin-bottom:15px;">
-            <el-radio v-model="nation" label="1">中国籍</el-radio>
-            <el-radio v-model="nation" label="2">外国籍</el-radio>
-          </el-row>
-          <el-upload
-            drag
-            :action="action + (nation==='1' ? '/native_population_import' : '/foreign_population_import')"
-            :accept="accept"
-            :on-success="handleSuccess"
-            :before-upload="beforeUpload"
-            multiple>
-            <i class="el-icon-upload"></i>
-            <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-            <div class="el-upload__tip" slot="tip">仅支持xls或xlsx格式的文件，且不超过2Mb</div>
-          </el-upload>
-        </div>`
-      }, {
-        dialog: {
-          appendToBody: true,
-          width: '410px',
-          center: true,
-          title: '导入'
-        }
-      }, (tpl) => {
-        template.dialogTemplate = tpl
-      }).catch((_this) => {
-        _this.visible = false
-        template.dialogTemplate = null
-      })
-    } else if (action === 'mbxz') {
-      window.location.href = __YBSS_CONFIG__.DOWNLOAD_BASE_URL + (nation==='1' ? "/实有人口(中国籍).xlsx" : "实有人口(外国籍).xlsx")
-    } else {
+    }else{
       callback(true)
     }
-  },
+  }
 });
