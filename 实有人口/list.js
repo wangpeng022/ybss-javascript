@@ -4,7 +4,7 @@
  * @Author: 王鹏
  * @Date: 2021-01-19 11:02:06
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-03-09 10:16:25
+ * @LastEditTime: 2021-03-09 15:04:49
  */
 Object.assign(JTemplate, {
   //加载事件
@@ -164,7 +164,9 @@ Object.assign(JTemplate, {
         template.dialogTemplate = null
       })
     } else if (action === 'mbxz') {
-      window.location.href = __YBSS_CONFIG__.DOWNLOAD_BASE_URL + (nation==='1' ? "/实有人口(中国籍).xlsx" : "实有人口(外国籍).xlsx")
+      window.location.href = __YBSS_CONFIG__.DOWNLOAD_BASE_URL + "/实有人口(中国籍).xlsx"
+    } else if (action === 'mbxz_w') {
+      window.location.href = __YBSS_CONFIG__.DOWNLOAD_BASE_URL + "/实有人口(外国籍).xlsx"
     } else {
       callback(true)
     }

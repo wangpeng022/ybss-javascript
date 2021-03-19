@@ -4,7 +4,7 @@
  * @Author: 王鹏
  * @Date: 2021-01-19 11:02:06
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-02-25 09:18:58
+ * @LastEditTime: 2021-03-10 09:24:30
  */
 Object.assign(JTemplate, {
   //加载事件
@@ -148,8 +148,9 @@ Object.assign(JTemplate, {
   //按钮提交前置事件
   beforeSubmit: function (template, action, position, selection, data, callback) {
     if (action === 'lmt') {
-      template.$router.push('/ybsswptest/lmtPage?id=' + data.building_id)
+      template.$router.push('/rfgl/bzdz_1/lmtPage?id=' + data.building_id)
+    }else{
+      callback(true)
     }
-    callback(true)
   },
 });
