@@ -4,11 +4,12 @@
  * @Author: 王鹏
  * @Date: 2021-02-02 14:49:24
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-03-17 11:49:51
+ * @LastEditTime: 2021-03-19 18:19:37
  */
 Object.assign(JForm, {
   //加载事件
   onLoad: function (form) {
+    form.defValSave = form.getFormData()
     let $fn = {
       /**
        * @description: 显示隐藏dom
@@ -16,7 +17,7 @@ Object.assign(JForm, {
        * @param {String} type none | block
        * @return void
        */
-      toggle: (selector, type)=> {
+      toggle: (selector, type) => {
         let dom = document.querySelector(selector)
         if (Array.isArray(dom)) {
           dom = dom[0]
@@ -24,28 +25,11 @@ Object.assign(JForm, {
         if (dom) {
           dom.style.display = type
         }
-      },
-      /**
-       * @description: 生成uuid
-       * @param none
-       * @return void
-       */
-      createUuid: ()=> {
-        var s = []
-        var hexDigits = '0123456789abcdef'
-        for (var i = 0; i < 36; i++) {
-          s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1)
-        }
-        s[14] = '4'
-        s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1)
-        s[8] = s[13] = s[18] = s[23] = '-'
-        return s.join('')
       }
     }
     let list = form.$parent.$parent.$parent.$parent
     let type = list.action
     if (type === 'add') {
-      form.$refs.dynamicForm.models.id = $fn.createUuid()
       // 隐藏 所在位置详情
       $fn.toggle('.rel-enterprise-block-position-edit', 'none')
       $fn.toggle('.rel-enterprise-block-position-detail', 'none')
@@ -62,7 +46,7 @@ Object.assign(JForm, {
     }
   },
   //表单按钮前置事件
-  beforeSubmit:function(form,action,postValue,callback){
+  beforeSubmit: function (form, action, postValue, callback) {
     /**
     * @description: 获取网格options
     * @param {String} code 区域编码
@@ -70,43 +54,60 @@ Object.assign(JForm, {
     * @return void
     */
     let customerSave = (data) => {
-     this.$request({
-       url: '/ybss/v3/relHouseHoldEnterPrise/customerSave',
-       method: 'post',
-       data: data
-     }).then(res => {
-       if (res.state === 200) {
-         callback(true)
-       }else{
-        form.$message({
-          message: res.message,
-          type: 'warning'
-        })
-       }
-     })
-   }
-   let list = form.$parent.$parent.$parent.$parent
-   let type = list.action
-    if(action==='save'){
-      // console.log(form.$refs.dynamicForm);
-      form.$refs.dynamicForm.validate((valid) => { 
+      this.$request({
+        url: '/ybss/v3/relHouseHoldEnterPrise/customerSave',
+        method: 'post',
+        data: data
+      }).then(res => {
+        if (res.state === 200) {
+          callback(true)
+        } else {
+          form.$message({
+            message: res.message,
+            type: 'warning'
+          })
+        }
+      })
+    }
+    /**
+  * @description: 生成uuid
+  * @param none
+  * @return void
+  */
+    let createUuid = () => {
+      var s = []
+      var hexDigits = '0123456789abcdef'
+      for (var i = 0; i < 36; i++) {
+        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1)
+      }
+      s[14] = '4'
+      s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1)
+      s[8] = s[13] = s[18] = s[23] = '-'
+      return s.join('')
+    }
+    let list = form.$parent.$parent.$parent.$parent
+    let type = list.action
+    if (action === 'save') {
+      form.$refs.dynamicForm.validate((valid) => {
+        let id = createUuid()
+        form.setData('id', id)
         if (valid) {
           if (type === 'add') {
-            let model = form.$refs.dynamicForm.models
-            let ids = model.houseAddress
+            // let model = form.$refs.dynamicForm.models
+            let ids = form.getData('houseAddress')
             let data = {
               dataSources: 'pc',
-              enterpriseId: model.id,
+              enterpriseId: id,
               householdId: ids.split('.').pop()
             }
             customerSave(data)
-          }else if(type === 'edit') {
-            callback(true) 
+          } else if (type === 'edit') {
+            callback(true)
           }
         }
       })
-    }else{
-      callback(true) 
+    } else {
+      callback(true)
     }
   }
 });

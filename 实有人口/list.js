@@ -4,11 +4,18 @@
  * @Author: 王鹏
  * @Date: 2021-01-19 11:02:06
  * @LastEditors: 王鹏
- * @LastEditTime: 2021-03-09 15:04:49
+ * @LastEditTime: 2021-03-23 16:24:37
  */
 Object.assign(JTemplate, {
   //加载事件
   onLoad: function (template) {
+    
+    setTimeout(()=>{
+      //替换数字范围间隔符
+    template.$el.getElementsByClassName('el-range-separator')[0].innerText="至"
+ 
+    },500)
+  
     // code值
     let codes = {
       // 标准地址
